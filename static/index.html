@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ColdTrace — Мониторинг парка</title>
+<link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+<header>
+  <div class="brand">❄️ <b>ColdTrace</b>
+    <span class="tag">Система мониторинга реф-боксов</span>
+  </div>
+  <nav id="tabs">
+    <button data-tab="dashboard" class="active">Мониторинг парка</button>
+  </nav>
+</header>
+
+<main>
+  <section id="tab-dashboard" class="tab active">
+    <div class="dash-header">
+      <div>
+        <h2>Парк реф-боксов</h2>
+        <p class="muted" id="dashSubtitle">Сбор: 6000 кг/день · Загружено боксов: 6</p>
+      </div>
+      <div class="dash-stats" id="dashStats">
+        <div class="stat"><span>Средняя t°</span><b class="text-ok" id="avgTemp">—</b></div>
+        <div class="stat"><span>Средний заряд</span><b class="text-ok" id="avgBat">—</b></div>
+        <div class="stat"><span>Статус сети</span><b id="netStatus">OK</b></div>
+      </div>
+    </div>
+
+    <div class="grid" id="boxesGrid" role="list" aria-label="Парк реф-боксов">
+      <!-- JS рендерит карточки -->
+    </div>
+  </section>
+</main>
+
+<!-- Модальное окно со смартфоном -->
+<div id="phoneModal" class="modal-overlay" aria-hidden="true">
+  <div class="modal-content">
+    <!-- Сюда JS вставит содержимое смартфона -->
+  </div>
+</div>
+
+<script src="/static/app.js"></script>
+</body>
+</html>
